@@ -1,16 +1,17 @@
 .home {
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 
 .album-continuer {
-    max-width: 498px;
-    margin: 2rem;
+    max-width: 500px;
+    min-width: 500px;
 }
 
 .album-thumbnail {
-    min-width: 150px;
-    min-height: 150px;
+    width: 150px;
+    height: 150px;
     margin: 0.5rem;
     border-radius: 15px;
     box-shadow: gray 4px 4px 4px;
