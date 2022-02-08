@@ -19,7 +19,11 @@ function App() {
     };
 
     useEffect(() => {
-        getAlbum([10, 20]).then((album) => setAlbums(album));
+        getAlbum([10, 20]).then((album) => {
+            let temp = [];
+            album.map((el) => temp.push(...el));
+            setAlbums(temp);
+        });
     }, []);
 
     return (
