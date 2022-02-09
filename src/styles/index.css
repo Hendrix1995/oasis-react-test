@@ -11,18 +11,44 @@ header {
 }
 
 .home {
+  min-width: 550px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  overflow: hidden;
 }
 
 .album-continuer {
-  max-width: 500px;
-  min-width: 500px;
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.album-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.album-box:hover img {
+  -webkit-filter: brightness(65%);
+          filter: brightness(65%);
+}
+
+.album-box:hover span {
+  display: inline-block;
 }
 
 .album-thumbnail {
@@ -32,6 +58,15 @@ header {
   border-radius: 15px;
   -webkit-box-shadow: gray 4px 4px 4px;
           box-shadow: gray 4px 4px 4px;
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
+}
+
+.album-event-text {
+  color: #fff;
+  position: absolute;
+  margin-top: 0.5rem;
+  display: none;
 }
 
 * {
