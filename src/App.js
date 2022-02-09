@@ -3,12 +3,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 
 import Header from "./components/Header.js";
+import Alert from "./components/Alert.js";
 import Home from "./pages/Home.js";
 import Cart from "./pages/Cart.js";
 
 function App() {
     const [albums, setAlbums] = useState([]);
     const [cartItems, setCartItems] = useState([]);
+    const [isOpenAlert, setIsOpenAlert] = useState(false);
+    const [alertText, setAlertText] = useState("");
 
     const addToCart = (item) => {
         const found = cartItems.filter((el) => el.id === item.id);
@@ -37,6 +40,10 @@ function App() {
         );
     };
 
+    const openAlertHandler = () => {
+        setIsOpenAlert(!isOpenAlert);
+    };
+
     useEffect(() => {
         getAlbum([10, 20]).then((album) => {
             let temp = [];
@@ -52,6 +59,7 @@ function App() {
                 <Route exact path="/" element={<Home albums={albums} addToCart={addToCart} />} />
                 <Route path="/cart" element={<Cart cartItems={cartItems} removeFromCart={removeFromCart} />} />
             </Routes>
+            <Alert />
         </BrowserRouter>
     );
 }
