@@ -1,0 +1,22 @@
+.cart-item-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 2px;
+    border-top: solid 1px;
+}
+
+.cart-item-thumbnail {
+    width: 150px;
+    height: 150px;
+    margin-right: 1rem;
+}
+
+.cart-item-info {
+    width: 100%;
+}
+
+.cart-item-remove-button {
+    position: absolute;
+    right: 1rem;
+}
