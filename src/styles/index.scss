@@ -1,0 +1,9 @@
+@import "./components/Header";
+@import "./components/Alert";
+@import "./pages/Home";
+@import "./pages/Cart";
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}

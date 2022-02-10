@@ -1,0 +1,42 @@
+.home {
+    min-width: 550px;
+    display: flex;
+    justify-content: center;
+}
+
+.album-continuer {
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.album-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover img {
+        filter: brightness(65%);
+    }
+
+    &:hover span {
+        display: inline-block;
+    }
+}
+
+.album-thumbnail {
+    width: 150px;
+    height: 150px;
+    margin: 0.5rem;
+    border-radius: 15px;
+    box-shadow: gray 4px 4px 4px;
+    transition: 250ms ease-in-out;
+}
+
+.album-event-text {
+    color: #fff;
+    position: absolute;
+    margin-top: 0.5rem;
+    display: none;
+}

@@ -1,0 +1,42 @@
+.alert-backdrop {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: grid;
+    place-items: center;
+}
+
+.alert-window {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 300px;
+    height: 150px;
+    padding: 0.5rem;
+    border-radius: 15px;
+    box-shadow: gray 6px 6px 6px;
+
+    .close {
+        font-size: 2rem;
+        background-color: #fff;
+        display: block;
+        margin-left: auto;
+        border: none;
+        transition: 210ms ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            color: #999;
+        }
+    }
+
+    .alert-text {
+        margin: auto;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
