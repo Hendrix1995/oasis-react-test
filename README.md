@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# oasis-react-test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+구현 내용
 
-## Available Scripts
+<ul>
+    <li>Home</li>
+    <li>Cart</li>
+</ul>
 
-In the project directory, you can run:
+<br />
 
-### `npm start`
+### 🔨 구현한 방법과 이유에 대한 간략한 내용
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<ul>
+    <li>axios로 처음 페이지를 렌딩할때 useEffect로 명시된 API를 통해 앨범의 데이터를 받아 옵니다.</li>
+    <li>Home에서 받아온 데이터를 map으로 id가 짝수인 경우만 나타내었습니다.</li>
+    <li>앨범에 hover style을 이용해 text와 배경색을 어둡게 만들어 주었습니다.</li>
+    <li>장바구니에 담길 아이템을 state로 만들어 주었습니다.</li>
+    <li>Cart로 장바구니 아이템을 props로 내려주어 나타내었습니다.</li>
+    <li>삭제 버튼을 이용해 장바구니의 아이템을 id로 찾아 filter을 이용해 지워줍니다.</li>
+    <li>브라우저의 사이즈가 Cart에 담긴 아이템의 설명의 길이보다 많이 작아질 경우에 각 컴포넌트가 밀리므로, @media를 이용해 지정된 길이보다 화면이 작아지면 font-size를 줄여서 밀리는 경우를 보완하였습니다.</li>
+    <li>기본 alert보다 뛰어난 UX를 가진 alert를 만들어, 일정 시간 이후에 사라지면서, X 버튼을 따로 사용할 수 있게 하였습니다.</li>
+</ul>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 📝 구현하면서 어려웠던 점과 해결 방법 (Error Handling Log)
 
-### `npm test`
+<ul>
+    <li>앨범에 hover시 배경색을 변경하면서 원하는 text를 나타내는 기능</br />=> 평소에는 display: none으로 보이지 않는 div를 만들어 hover시에만 보이도록 만들었습니다.</li>
+</ul>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🧑‍💻 자세한 실행 방법
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<ul>
+    <li>Cart버튼을 누르면 Cart 페이지로 갑니다.</li>
+    <li>Header버튼을 누르면 Home으로 돌아갑니다.</li>
+    <li>Cart 페이지에 들어있는 아이템이 없을 경우 비어있다는 text를 보여줍니다.</li>
+    <li>Home에서 앨범에 마우스를 올리면 배경이 진해짐과 함께 클릭시 장바구니에 추가 할 수 있다는 text를 보여줍니다.</li>
+    <li>장바구니에 아이템을 담으면 추가되었다는 alert를 보여줍니다.</li>
+    <li>중복된 아이템을 누르면 중복된 아이템이라는 alert를 보여줍니다. 장바구니에 아이템은 담기지 않습니다.</li>
+    <li>alert는 일정 시간이후 사라지며, backdrop이나 X 버튼을 눌러도 사라집니다.</li>
+    <li>장바구니에 담긴 아이템을 클릭하면 아이템의 id를 보여줍니다.</li>
+    <li>장바구니에 담긴 아이템의 삭제버튼을 클릭하면 해당 아이템을 장바구니에서 삭제합니다.</li>
+</ul>
