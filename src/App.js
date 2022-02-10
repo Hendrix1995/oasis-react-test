@@ -16,10 +16,10 @@ function App() {
     const addToCart = (item) => {
         const found = cartItems.filter((el) => el.id === item.id);
         if (found.length !== 0) {
-            alert("중복된 아이템 입니다");
+            openAlertHandler("중복된 아이템 입니다");
         } else {
             setCartItems([...cartItems, { albumId: item.albumId, id: item.id, title: item.title, url: item.url, thumbnailUrl: item.thumbnailUrl }]);
-            alert("추가되었습니다!");
+            openAlertHandler("추가되었습니다!");
         }
     };
 
@@ -40,8 +40,14 @@ function App() {
         );
     };
 
-    const openAlertHandler = () => {
-        setIsOpenAlert(!isOpenAlert);
+    const openAlertHandler = (text) => {
+        setAlertText(text);
+        setIsOpenAlert(true);
+        setTimeout(() => setIsOpenAlert(false), 800);
+    };
+
+    const closeHandler = () => {
+        setIsOpenAlert(false);
     };
 
     useEffect(() => {
@@ -57,9 +63,9 @@ function App() {
             <Header />
             <Routes>
                 <Route exact path="/" element={<Home albums={albums} addToCart={addToCart} />} />
-                <Route path="/cart" element={<Cart cartItems={cartItems} removeFromCart={removeFromCart} />} />
+                <Route path="/cart" element={<Cart cartItems={cartItems} removeFromCart={removeFromCart} openAlertHandler={openAlertHandler} />} />
             </Routes>
-            <Alert />
+            {isOpenAlert ? <Alert alertText={alertText} closeHandler={closeHandler} /> : null}
         </BrowserRouter>
     );
 }
